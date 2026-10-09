@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Composer() {
+export default function Composer({ onSend }) {
   const [draft, setDraft] = useState("");
 
   function send() {
@@ -9,7 +9,7 @@ export default function Composer() {
       return;
     }
 
-    console.log("send:", text);
+    onSend(text);
     setDraft("");
   }
 
